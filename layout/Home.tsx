@@ -1,7 +1,7 @@
 import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import ReactCardFlip from 'react-card-flip'
 import Link from 'next/link'
-import Obfuscate from 'react-obfuscate'
+import { Obfuscate } from '@south-paw/react-obfuscate-ts'
 
 import GithubIcon from './icons/github'
 import CodeIcon from './icons/code'
