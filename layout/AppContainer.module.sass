@@ -1,7 +1,6 @@
 
 .root
   background: var(--background-secondary)
-  //background: linear-gradient(to bottom, var(--background-primary), var(--background-secondary))
   display: flex
   width: 100vw
   height: 100vh
@@ -10,3 +9,8 @@
   position: relative
   justify-content: center
   align-items: center
+
+  &[data-mobile="true"]
+
+    select, input
+      font-size: 16px !important

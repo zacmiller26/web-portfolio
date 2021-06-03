@@ -1,19 +1,13 @@
 import '../styles/globals.sass'
 import '../code-examples/nexus-tbc-builds/app/ClassicBuilds.sass'
 
-import { useMemo } from 'react'
 import type { AppProps } from 'next/app'
 import Head from 'next/head'
 
 import ThemeProvider from '../contexts/theme'
 import AppContainer from '../layout/AppContainer'
-import useMobileDetect from '../hooks/useMobileDetect'
 
 function App({ Component, pageProps }: AppProps) {
-
-  const mobileDetect = useMobileDetect()
-
-  const isMobile = useMemo(() => mobileDetect.isMobile(), [mobileDetect])
 
   return (
     <>
@@ -27,9 +21,7 @@ function App({ Component, pageProps }: AppProps) {
       </Head>
       <ThemeProvider>
         <AppContainer>
-          <div data-mobile={isMobile}>
-            <Component {...pageProps} />
-          </div>
+          <Component {...pageProps} />
         </AppContainer>
       </ThemeProvider>
     </>
