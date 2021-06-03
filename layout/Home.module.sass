@@ -1,0 +1,221 @@
+@use 'sass:math'
+@import ../styles/mixins
+
+$spacing: 1rem
+.root
+  position: relative
+  display: flex
+  flex-direction: column
+  align-items: center
+
+  .themeToggle
+    position: relative
+    display: flex
+    width: 100%
+    margin: 0 0 math.div($spacing, 1)
+
+    button
+      $br: 1rem
+      @include buttonReset
+      flex: 1
+      display: block
+      height: .6rem
+      border: 2px solid transparent
+      position: relative
+      background: var(--accent)
+      border-radius: $br
+      margin: 0 1rem 0 0
+
+      &:last-child
+        margin-right: 0
+
+      &:hover
+        cursor: pointer
+
+      &[data-value="blue"]
+        background: blue
+
+      &[data-value="purple"]
+        background: purple
+
+      &[data-value="orange"]
+        background: orange
+
+      &[data-active="true"]
+        border-color: rgba(white, .2)
+
+
+
+  .cardBorder
+    position: relative
+    display: flex
+    flex-direction: column
+    align-items: center
+    background: linear-gradient(-45deg, red, blue, green, yellow)
+    background-size: 300% 300%
+    animation: gradient 14s ease infinite
+    padding: 2px
+    border-radius: 1.1rem
+    z-index: 99
+    box-sizing: border-box
+
+    .card
+      position: relative
+      display: flex
+      flex-direction: column
+      align-items: center
+      background: rgba(var(--background-secondary-rgb), 1)
+      padding: 3rem
+      border-radius: 1rem
+      height: 100%
+      flex: 1
+
+      &[data-fixed]
+        padding: 2rem
+
+        p
+          flex: 1
+          display: flex
+          align-content: center
+          justify-content: center
+          flex-direction: column
+          background: rgba(var(--background-primary-rgb), .3)
+          padding: 1rem
+          border-radius: 1rem
+
+      .btnMenu
+        display: flex
+
+      button, a
+        @include buttonReset
+        margin: 0 1rem 0 0
+
+        &:last-child
+          margin: 0
+
+        svg
+          $size: 1.4rem
+          width: $size
+          height: $size
+
+          path, polygon
+            fill: var(--text-normal)
+            opacity: .75
+
+
+    .avatar
+      $size: 200px
+      position: relative
+      display: block
+      margin: 0 0 $spacing
+      padding: 0
+
+      i
+        position: relative
+        display: block
+        width: $size
+        height: $size
+        background: var(--background-tertiary)
+        background-image: url('/cool-guy.png')
+        background-size: cover
+        background-position: center
+        background-repeat: no-repeat
+        border-radius: $size
+        opacity: 1
+
+
+    h1
+      color: var(--text-normal)
+      letter-spacing: 1px
+      font-size: 1.5rem
+      font-weight: 300
+      margin: 0 0 .25rem
+
+    h2, h6
+      color: var(--text-normal)
+      opacity: .5
+      font-size: .8rem
+      font-weight: 300
+      margin: 0 0 $spacing * 1.5
+
+    h3
+      color: var(--text-normal)
+      font-size: 1.2rem
+      font-weight: 600
+      width: 100%
+      margin: 0 0 1.5rem
+
+    h4
+      color: var(--text-normal)
+      font-size: .95rem
+      font-weight: 500
+      width: 100%
+      text-align: center
+      margin: 0 0 math.div($spacing, 4)
+
+    h5
+      font-size: .85rem
+      font-weight: 300
+      opacity: .8
+      margin: 0 0 math.div($spacing, 4)
+
+    h6
+      font-size: .8rem
+      font-weight: 300
+      margin: $spacing * 1.5 0
+      opacity: .6
+
+      a
+        font-size: .8rem !important
+
+    p
+      font-size: .85rem
+      line-height: 1.2rem
+      font-weight: 300
+      margin: 0 0 $spacing * 1.5
+
+      em
+        font-style: italic
+
+  .navMenu
+    position: relative
+    display: flex
+    margin: $spacing 0
+
+    a
+      $size: 2rem
+      $shrink: .8rem
+      display: flex
+      align-items: center
+      justify-content: center
+      background: rgba(white, .05)
+      border-radius: $size
+      margin: 0 .5rem 0 0
+      padding: $shrink
+      transition: fill .25s
+
+      &:last-child
+        margin-right: 0
+
+      svg
+        $size: $size - $shrink
+        height: $size
+        width: $size
+
+        path
+          fill: var(--text-normal)
+          transition: fill .5s
+
+      &:hover
+        background: rgba(white, .15)
+
+        svg path
+          fill: var(--accent)
+
+@keyframes gradient
+  0%
+    background-position: 0 50%
+  50%
+    background-position: 100% 50%
+  100%
+    background-position: 0 50%

@@ -1,0 +1,109 @@
+
+$fs: .8rem
+
+.nexusTableRoot
+
+  button
+    width: auto
+    font: normal
+    font-family: var(--font-family)
+    background: none
+    border: none
+    border-radius: 0
+    box-sizing: border-box
+    color: var(--text-normal)
+    font-size: .75rem
+    font-weight: 500
+    margin: 0
+    padding: 0
+    text-align: left
+    -webkit-appearance: none
+    -webkit-font-smoothing: inherit
+    -moz-osx-font-smoothing: inherit
+    line-height: normal
+    overflow: visible
+    outline: none
+    -webkit-text-size-adjust: none
+    text-rendering: geometricPrecision
+    -webkit-appearance: none
+    -webkit-border-radius: none
+    background: var(--accent)
+    color: var(--background-secondary)
+    padding: 0 .5rem
+    text-align: center
+    min-width: 1.75rem
+    border-radius: 20px
+
+    &:disabled
+      opacity: 0
+
+      &:hover
+        cursor: default
+
+
+  .nexusTable
+    display: flex
+    flex-direction: column
+
+    >div.nexusTableRow
+      display: flex
+      margin: 0 0 2px
+
+      &:last-child
+        margin: 0
+
+      &.header
+
+        >div.nexusTableItem.header
+          border: none
+          background: none
+
+      >span
+        padding: .5rem
+        display: inline-block
+
+      >div.nexusTableItem
+        $fw: 500
+        width: 100%
+        max-width: 100%
+        overflow: hidden
+        background: var(--background-tertiary)
+        font-family: var(--font-family)
+        padding: .5rem
+        font-size: $fs !important
+        font-weight: $fw !important
+        color: var(--text-normal)
+        white-space: pre-line
+        overflow-wrap: break-word
+
+        &:nth-child(odd)
+          background: var(--background-primary)
+
+        &:last-child
+          border-right: 0
+
+        textarea
+          display: block
+          width: 100%
+          flex: 1
+          background: none
+          border: none
+          font-family: var(--font-family)
+          color: var(--text-normal)
+          padding: 0
+          font-size: $fs !important
+          font-weight: $fw !important
+          border-radius: 0
+          -webkit-appearance: none
+          -webkit-font-smoothing: inherit
+          -moz-osx-font-smoothing: inherit
+          line-height: normal
+          overflow: visible
+          outline: none
+          resize: none
+
+          &::placeholder
+            font-size: $fs
+            color: var(--text-muted)
+            font-weight: 300
+            opacity: .5

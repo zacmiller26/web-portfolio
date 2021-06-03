@@ -1,0 +1,10 @@
+{
+  "table_content": {
+    "type": "string",
+    "label": "Table Content",
+    "validators": {
+      "required": true,
+      "max_length": 20000
+    }
+  }
+}

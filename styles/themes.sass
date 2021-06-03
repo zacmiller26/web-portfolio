@@ -1,0 +1,60 @@
+@import ./vars
+
+@function hex-to-rgb($hex)
+  @return red($hex), green($hex), blue($hex)
+
+html
+
+  --font-family: $fontFamily
+  --text-normal: #FFF
+  --text-jaded: #C5D1DA
+  --text-muted: #6E7E8C
+  --text-error: #E0245E
+
+  --background-gradient: #ee7752, #e73c7e, #23a6d5, #23d5ab
+
+  --background-primary: #{$themeBlueBgPrimary}
+  --background-primary-rgb: #{hex-to-rgb($themeBlueBgPrimary)}
+
+  --background-secondary: #{$themeBlueBgSecondary}
+  --background-secondary-rgb: #{hex-to-rgb($themeBlueBgSecondary)}
+
+  --background-tertiary: #{$themeBlueBgTertiary}
+  --background-tertiary-rgb: #{hex-to-rgb($themeBlueBgTertiary)}
+
+
+  --accent: #9EFF36
+
+
+html [data-theme="purple"]
+
+  --background-primary: #{$themePurpleBgPrimary}
+  --background-primary-rgb: #{hex-to-rgb($themePurpleBgPrimary)}
+
+  --background-secondary: #{$themePurpleBgSecondary}
+  --background-secondary-rgb: #{hex-to-rgb($themePurpleBgSecondary)}
+
+  --background-tertiary: #{$themePurpleBgTertiary}
+  --background-tertiary-rgb: #{hex-to-rgb($themePurpleBgTertiary)}
+
+
+  --accent: yellow
+
+
+html [data-theme="orange"]
+
+  --background-gradient: #23a6d5, #23d5ab, green, pink
+
+  --background-primary: #{$themeOrangeBgPrimary}
+  --background-primary-rgb: #{hex-to-rgb($themeOrangeBgPrimary)}
+
+  --background-secondary: #{$themeOrangeBgSecondary}
+  --background-secondary-rgb: #{hex-to-rgb($themeOrangeBgSecondary)}
+
+  --background-tertiary: #{$themeOrangeBgTertiary}
+  --background-tertiary-rgb: #{hex-to-rgb($themeOrangeBgTertiary)}
+
+  --accent: blue
+
+
+  --text-normal: #181818

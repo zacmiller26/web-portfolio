@@ -1,0 +1,24 @@
+{
+
+  "wow_class": {
+    "type": "select",
+    "label": "Class",
+    "choices": [
+      ["druid", "Druid"],
+      ["hunter", "Hunter"],
+      ["mage", "Mage"],
+      ["paladin", "Paladin"],
+      ["priest", "Priest"],
+      ["rogue", "Rogue"],
+      ["shaman", "Shaman"],
+      ["warlock", "Warlock"],
+      ["warrior", "Warrior"]
+    ]
+  },
+
+  "build_code": {
+    "type": "string",
+    "label": "Build Code"
+  }
+
+}
