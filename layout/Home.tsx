@@ -15,12 +15,15 @@ type CardSizeType = {
   width: 'inherit' | number
 }
 
-const isClient = () => typeof window !== 'undefined'
+const PERSON_FNAME = process.env.NEXT_PUBLIC_PERSON_FIRST_NAME
+const PERSON_LNAME = process.env.NEXT_PUBLIC_PERSON_LAST_NAME
+const PERSON_EMAIL = process.env.NEXT_PUBLIC_PERSON_EMAIL
 
 const Home: React.FC = () => {
 
   const { theme, themes, setTheme } = useTheme()
   const cardRef = useRef<HTMLDivElement | null>(null)
+  const [showEmail, setShowEmail] = useState(false)
   const [isFlipped, setIsFlipped] = useState<boolean>(false)
   const [cardSize, setCardSize] = useState<CardSizeType>({
     height: 'inherit', width: 'inherit'
@@ -57,24 +60,31 @@ const Home: React.FC = () => {
             <div className={styles.avatar}>
               <i />
             </div>
-            <h1>Zac Miller</h1>
+            <h1>{PERSON_FNAME} {PERSON_LNAME}</h1>
             <h2><Age year={1989} /> · Lehi, UT</h2>
             <h4>Full Stack Engineer</h4>
             <h5>Expert Superbike Champion</h5>
             <h6>
-              {!isClient() && <a href="#">{"emailaddr@domain.com"}</a>}
-              <Obfuscate email="zacmiller26@icloud.com" />
+              {!showEmail ?
+                <a href="#" onClick={e => {
+                  e.preventDefault(); setShowEmail(true)
+                }}>
+                  Email Me
+                </a> :
+                <a href={`mailto:${PERSON_EMAIL}`}>{PERSON_EMAIL}</a>
+              }
+
             </h6>
             <div className={styles.btnMenu}>
               <button type="button" onClick={toggleCard}>
                 <InfoIcon />
               </button>
-              {/*<Link href="/examples">
+              <Link href="/examples">
                 <a><CodeIcon /></a>
               </Link>
               <a href="https://github.com/felfire/web-portfolio" target="_blank">
                 <GithubIcon />
-              </a>*/}
+              </a>
             </div>
           </div>
         </div>
@@ -83,7 +93,7 @@ const Home: React.FC = () => {
           style={{ width: cardSize.width, height: cardSize.height }}
         >
           <div className={styles.card} data-fixed>
-            <h3>Hi, I'm Zac 😎</h3>
+            <h3>Hi, I'm {PERSON_FNAME} 😎</h3>
             <p>
               I love chasing after goals and dreams, and have pursued quite a
               few over the past 12 years.
@@ -104,7 +114,7 @@ const Home: React.FC = () => {
         </div>
       </ReactCardFlip>
 
-      {<div className={styles.navMenu}>
+      {/*<div className={styles.navMenu}>
         <Link href="/examples">
           <a>
             <CodeIcon />
@@ -113,7 +123,7 @@ const Home: React.FC = () => {
         <a href="https://github.com/felfire/web-portfolio" target="_blank">
           <GithubIcon />
         </a>
-      </div>}
+      </div>*/}
 
     </div>
 
