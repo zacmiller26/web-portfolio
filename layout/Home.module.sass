@@ -7,6 +7,12 @@ $spacing: 1rem
   display: flex
   flex-direction: column
   align-items: center
+  justify-content: center
+  height: 100%
+  width: 100%
+  padding: 1rem 0
+  box-sizing: border-box
+  overflow-y: scroll
 
   .themeToggle
     position: relative
@@ -65,13 +71,13 @@ $spacing: 1rem
       flex-direction: column
       align-items: center
       background: rgba(var(--background-secondary-rgb), 1)
-      padding: 3rem
+      padding: 2rem
       border-radius: 1rem
       height: 100%
       flex: 1
 
       &[data-fixed]
-        padding: 2rem
+        padding: 1.5rem
 
         p
           flex: 1
@@ -79,8 +85,8 @@ $spacing: 1rem
           align-content: center
           justify-content: center
           flex-direction: column
-          background: rgba(var(--background-primary-rgb), .3)
-          padding: 1rem
+          //background: rgba(var(--background-primary-rgb), .3)
+          //padding: 1rem
           border-radius: 1rem
 
       .btnMenu
