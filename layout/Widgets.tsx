@@ -36,14 +36,14 @@ const Widgets: React.FC = () => {
 const NexusWidgetsNote = () => (
   <p>Select a widget above to view some basic code examples. They are
     react components I had created for a feature of a different project. The
-    feature being a way where anyone with react experience could create
-    their own interactive react components to run on the site.
+    feature being a way for anyone with react experience to create
+    their own interactive widgets to run on the site.
   <br /><br />
   These "widgets" (react components) would be available for authors to use to
-  for showing more complex types of content.
+  show more complex types of content.
   <br /><br />
   This was a challenging feature, because running user-defined code and sharing
-  data with such has major security implications.
+  data with them has major security implications.
   <br /><br />
   I ended up with a solution that involved seperate domains,
   multiple iframes, the postMessage API, a custom NPM package etc.
