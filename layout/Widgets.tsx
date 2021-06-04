@@ -5,6 +5,7 @@ import NexusBasicTable from '../code-examples/nexus-basic-table'
 import HomeBtn from './HomeBtn'
 import styles from './Widgets.module.sass'
 
+const GITHUB_REPO = process.env.NEXT_PUBLIC_GITHUB_REPO
 
 const Widgets: React.FC = () => {
 
@@ -54,9 +55,23 @@ const NexusTableNote = () => (
   It's very simple and can be stored/repopulated using JSON.</p>
 )
 
-const NexusBuildNote = () => (
-  <p>This is a widget for a game, the main challenge was replicating all the
-  rules on what can and cannot be selected, particularly the "linked" talents.</p>
-)
+const NexusBuildNote = () => {
+
+  const baseUrl = (
+    `${GITHUB_REPO}/blob/main/code-examples/nexus-tbc-builds/app/hooks`
+  )
+
+  return (
+    <p>This is a widget for a game, the main challenge was{' '}
+      <a
+        href={`${baseUrl}/useTalentBuildEngine.tsx#L170`}
+        target="_blank">
+        replicating all the rules</a> on what can and cannot be selected,
+        and drawing/defining the{' '}<a
+          href={`${baseUrl}/useTreePaths.tsx`}
+          target="_blank">"linked" talents</a>.
+    </p>
+  )
+}
 
 export default Widgets

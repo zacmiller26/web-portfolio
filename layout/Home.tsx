@@ -16,7 +16,10 @@ type CardSizeType = {
 
 const PERSON_FNAME = process.env.NEXT_PUBLIC_PERSON_FIRST_NAME
 const PERSON_LNAME = process.env.NEXT_PUBLIC_PERSON_LAST_NAME
+const PERSON_TITLE = process.env.NEXT_PUBLIC_PERSON_TITLE
+const PERSON_TITLE_2 = process.env.NEXT_PUBLIC_PERSON_TITLE_2
 const PERSON_EMAIL = process.env.NEXT_PUBLIC_PERSON_EMAIL
+const GITHUB_REPO = process.env.NEXT_PUBLIC_GITHUB_REPO
 
 const Home: React.FC = () => {
 
@@ -61,8 +64,8 @@ const Home: React.FC = () => {
             </div>
             <h1>{PERSON_FNAME} {PERSON_LNAME}</h1>
             <h2><Age year={1989} /> · Lehi, UT</h2>
-            <h4>Full Stack Engineer</h4>
-            <h5>Expert Superbike Champion</h5>
+            <h4>{PERSON_TITLE}</h4>
+            <h5>{PERSON_TITLE_2}</h5>
             <h6>
               {!showEmail ?
                 <a href="#" onClick={e => {
@@ -81,7 +84,7 @@ const Home: React.FC = () => {
               <Link href="/examples">
                 <a><CodeIcon /></a>
               </Link>
-              <a href="https://github.com/felfire/web-portfolio" target="_blank">
+              <a href={GITHUB_REPO} target="_blank">
                 <GithubIcon />
               </a>
             </div>
