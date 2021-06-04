@@ -54,13 +54,14 @@ $spacing: 1rem
     display: flex
     flex-direction: column
     align-items: center
-    background: linear-gradient(-45deg, red, blue, green, yellow)
-    background-size: 300% 300%
-    animation: gradient 14s ease infinite
+    background: linear-gradient(-45deg, #F63933, #3368F6, #A1FFF0)
+    background-size: 200% 200%
+    animation: gradient 12s ease infinite
     padding: 2px
     border-radius: 1.1rem
     z-index: 99
     box-sizing: border-box
+
 
     .card
       position: relative
@@ -72,6 +73,7 @@ $spacing: 1rem
       border-radius: 1rem
       height: 100%
       flex: 1
+      z-index: 1
 
       &[data-fixed]
         padding: 1.5rem
