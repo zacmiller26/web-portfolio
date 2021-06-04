@@ -97,17 +97,17 @@ const Home: React.FC = () => {
           <div className={styles.card} data-fixed>
             <h3>Hi, I'm {PERSON_FNAME} 😎</h3>
             <p>
-              I love chasing after goals and dreams, and have pursued quite a
-              few over the past 12 years.
+              I love setting and chasing big goals, and have challenged
+              myself with a variety of them these past 10 years.
               <br /><br />
               💻 📈 🚴🏻‍♂️ 🏍 🏁 🥇 🏆 🍾
               <br /><br />
               Along the way, I've learned a few things about taking
               big ideas and shaping them into reality.
               <br /><br />
-              With much more to pursue &amp; learn, I think
-              playing a role in your teams future accomplishments would be an
-              excellent way of doing so!
+              I'm always looking for new opportunities and challenges, and
+              would love to bring my drive, experience and curiosity to a fun
+              new team or project. Let's get in touch!
             </p>
             <button type="button" onClick={toggleCard}>
               <LarrIcon />

@@ -34,19 +34,19 @@ const Widgets: React.FC = () => {
 }
 
 const NexusWidgetsNote = () => (
-  <p>Select a widget above to view some basic code examples. These are
-    demo "widgets" I had created for a feature that developers could use
-    to create their own interactive widgets.
+  <p>Select a widget above to view some basic code examples. They are
+    react components I had created for a feature of a different project. The
+    feature being a way where anyone with react experience could create
+    their own interactive react components to run on the site.
   <br /><br />
-  These widgets would then be
-  available for authors to use to show more complex types of content.
+  These "widgets" (react components) would be available for authors to use to
+  for showing more complex types of content.
   <br /><br />
-  That feature was a challenging technical issue because running
-  user-defined code has major security implications.
+  This was a challenging feature, because running user-defined code and sharing
+  data with such has major security implications.
   <br /><br />
-  I ended up using a solution similar to Twitch Extensions,
-  utilizing seperate domains, multiple iframes, the postMessageAPI,
-  a custom NPM package etc.
+  I ended up with a solution that involved seperate domains,
+  multiple iframes, the postMessage API, a custom NPM package etc.
 </p>
 )
 
